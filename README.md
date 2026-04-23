@@ -41,7 +41,7 @@ End-to-end student journey in one platform: mock interviews, MCQs, feedback, roa
 
 # Team Details 
 
-Team Name: PrepAI
+Team Name: NEXTGEN CODERS
 
 Team Members:
 1. Shivam Chaudhary(Team leader)
