@@ -1,22 +1,52 @@
-## Problem Statement
+# Project Title
 
-Students and early-career candidates often prepare for interviews in an unstructured way. Most practice methods are generic, provide weak feedback, and do not adapt to a candidate’s resume, target role, or performance history. This creates low confidence, unclear improvement paths, and poor visibility into readiness for real interview rounds.
+PrepAI - AI Powered Interview Preparation and Skill Roadmap Platform
 
-## Solution We Are Building
+# Problem Statement
 
-We are building an AI-powered interview preparation platform with a complete frontend experience and intelligent workflows for students. Users can sign up, upload resumes, set target roles, practice interview and MCQ rounds, get instant scoring and feedback, track progress in dashboards, and review detailed results.
+Students and early-career candidates prepare for interviews in an unstructured way. Most tools provide generic questions, weak feedback, and no clear next-step learning path. As a result, candidates struggle to understand their weak areas, improve consistently, and measure job readiness.
 
-After each interview, the platform adds two high-impact features:
+# Detailed Description of the Problem
 
-1. Roadmap with YouTube Videos: Based on weak areas, AI generates a structured week-by-week study roadmap with real YouTube video links for each topic, so students know exactly what to watch and study.
-2. Job Search After Interview: JSearch API automatically fetches at least 5 real live job listings related to the student’s target role. Each job card includes company name, logo, location, required skills, an Apply Now button, and a Get Roadmap button that creates a job-specific 4-week preparation roadmap using Claude API.
+Interview preparation today is fragmented and inefficient:
 
-## Unique Selling Points (USP)
+1. Practice is not personalized to the candidate's resume, role, and skill level.
+2. Feedback is often shallow and does not explain how to improve.
+3. Candidates do not get a clear step-by-step roadmap after mock interviews.
+4. There is no smooth transition from practice to applying for real jobs.
+5. Progress tracking across interview sessions and MCQ sessions is limited.
 
+Because of this, users spend time practicing but still feel uncertain about performance, confidence, and readiness for actual interviews.
+
+#  Proposed Solution (brief)
+
+PrepAI provides an end-to-end AI interview preparation workflow:
+
+1. Users upload resumes, choose target roles, and start interview or MCQ practice.
+2. AI evaluates responses and gives structured performance feedback.
+3. A detailed roadmap is generated and stored per session, with reusable cache logic to reduce repeated AI token usage.
+4. Roadmap guidance is shown as interactive step cards (box-style UI) with focused learning points and channel links.
+5. Users can track their performance through result dashboards and recommendations.
+
+
+# USP(Unique selling Points)
 Compared to most interview prep platforms, our product stands out by combining preparation, learning, and job action in one continuous flow:
 
-1. Personalized to each student profile: practice adapts to resume context, target role, and weak areas instead of giving the same generic sets to everyone.
-2. Learning path with real content links: week-by-week roadmap is mapped to actual YouTube videos, not just broad text advice.
-3. Direct interview-to-job transition: students do not stop at feedback; they instantly get live role-matched jobs to apply after the interview.
-4. Job-specific preparation on demand: every job card can generate a dedicated 4-week plan aligned to that job's skill requirements.
-5. End-to-end student journey in one platform: mock interviews, MCQs, feedback, roadmap, and job discovery are connected in one experience instead of being split across multiple tools.
+Personalized to each student profile: practice adapts to resume context, target role, and weak areas instead of giving the same generic sets to everyone.
+Learning path with real content links: week-by-week roadmap is mapped to actual YouTube videos, not just broad text advice.
+Direct interview-to-job transition: students do not stop at feedback; they instantly get live role-matched jobs to apply after the interview.
+Job-specific preparation on demand: every job card can generate a dedicated 4-week plan aligned to that job's skill requirements.
+End-to-end student journey in one platform: mock interviews, MCQs, feedback, roadmap, and job discovery are connected in one experience instead of being split across multiple tools.
+
+
+# Team Details 
+
+Team Name: PrepAI
+
+Team Members:
+1. Shivam Chaudhary(Team leader)
+2.Saurav Anand
+3.Puneeth S
+4.Surya
+
+
