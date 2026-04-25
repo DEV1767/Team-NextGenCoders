@@ -1,0 +1,130 @@
+PrepAI Backend Routes (Base URL: /api/v1)
+
+AUTH
+1) POST /auth/register
+   Use: Create new user account
+   Body: username, email, password, batchYear, collegeName
+
+2) POST /auth/login
+   Use: Login user
+   Body: email, password
+
+3) POST /auth/logout
+   Use: Logout user
+   Auth: Required
+
+USER
+4) GET /user/me
+   Use: Get logged-in user profile
+   Auth: Required
+
+5) PATCH /user/me
+   Use: Update logged-in user profile
+   Body: name, email, role, experience
+   Auth: Required
+
+ONBOARDING
+6) GET /roles
+   Use: Get role list for setup page
+
+7) GET /experience-levels
+   Use: Get experience level list for setup page
+
+8) PUT /onboarding
+   Use: Save onboarding selections
+   Body: role, experience, resume (optional)
+   Auth: Required
+
+DASHBOARD
+9) GET /dashboard/summary
+   Use: Get dashboard summary numbers
+   Auth: Required
+
+10) GET /dashboard/stats
+    Use: Get stat cards data
+    Auth: Required
+
+11) GET /session?limit=10
+    Use: Get recent sessions list
+    Auth: Required
+
+12) GET /dashboard/weekly-activity
+    Use: Get weekly practice activity data
+    Auth: Required
+
+13) GET /dashboard/score-trend
+    Use: Get score trend chart data
+    Auth: Required
+
+INTERVIEW
+14) POST /session/start
+    Use: Start interview session
+    Auth: Required
+
+15) POST /session/answer
+    Use: Submit answer in interview
+    Body: sessionId, answer
+    Auth: Required
+
+16) POST /session/tabswitch
+    Use: Log tab-switch event for session
+    Body: sessionId
+    Auth: Required
+
+17) POST /session/complete
+    Use: Complete interview session
+    Body: sessionId
+    Auth: Required
+
+18) GET /session/:id
+    Use: Get session details by id
+    Auth: Required
+
+19) GET /interview/question-bank?role=...&experience=...
+    Use: Get interview questions based on role and experience
+    Auth: Required
+
+RESULTS
+20) GET /results/latest
+    Use: Get latest interview result
+    Auth: Required
+
+21) GET /results/:resultId
+    Use: Get result by id
+    Auth: Required
+
+22) GET /results?type=interview&page=1&limit=20
+    Use: Get paginated results list
+    Auth: Required
+
+23) GET /results/:resultId/export/pdf
+    Use: Download result PDF
+    Auth: Required
+
+24) GET /results/:resultId/recommendations
+    Use: Get recommendation list for result
+    Auth: Required
+
+MCQ
+25) GET /mcq/questions?topic=...&limit=...
+    Use: Get MCQ questions
+    Auth: Required
+
+26) POST /mcq/attempts
+    Use: Submit MCQ attempt result
+    Body: attempted answers, score
+    Auth: Required
+
+27) GET /mcq/progress
+    Use: Get MCQ progress stats
+    Auth: Required
+
+LANDING PAGE (Public)
+28) GET /landing/features
+    Use: Get landing feature cards
+
+29) GET /landing/how-it-works
+    Use: Get landing step cards
+
+30) GET /landing/testimonials
+    Use: Get landing testimonials

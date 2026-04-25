@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base reset ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────── */
+::-webkit-scrollbar           { width: 5px; height: 5px; }
+::-webkit-scrollbar-track     { background: #f8f8f8; }
+::-webkit-scrollbar-thumb     { background: #d1d5db; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #9333ea; }
+
+/* ─── Sound-wave animation for microphone ──────────────────────────── */
+@keyframes soundWave {
+  0%, 100% { transform: scaleY(0.4); }
+  50%       { transform: scaleY(1.6); }
+}
+.sound-wave-bar {
+  display: inline-block;
+  width: 4px;
+  border-radius: 99px;
+  background-color: #9333ea;
+  animation: soundWave 0.65s ease-in-out infinite;
+}
+
+/* ─── Recording pulse ──────────────────────────────────────────────── */
+@keyframes recPulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.4; transform: scale(0.92); }
+}
+.rec-pulse { animation: recPulse 1.1s ease-in-out infinite; }
+
+/* ─── Page fade-in ─────────────────────────────────────────────────── */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: pageFadeIn 0.35s ease forwards; }
+
+/* ─── Progress bar fill animation ──────────────────────────────────── */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+.fill-bar { animation: fillBar 0.9s ease forwards; }
+
+/* ─── Typing cursor blink ──────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #9333ea;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* ─── Interview setup countdown ────────────────────────────────────── */
+@keyframes interviewCountdown {
+  0%   { transform: scale(0.65); opacity: 0.2; }
+  45%  { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+.interview-countdown {
+  animation: interviewCountdown 0.62s ease forwards;
+}
+
+/* ─── Utility: purple focus ring ───────────────────────────────────── */
+.focus-purple:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+  border-color: #9333ea;
+}
+
+/* ─── Option button states (MCQ) ───────────────────────────────────── */
+.option-default  { border-color: #e5e7eb; background: #ffffff; color: #111827; }
+.option-selected { border-color: #9333ea; background: #faf5ff; color: #7e22ce; }
+.option-correct  { border-color: #16a34a; background: #f0fdf4; color: #15803d; }
+.option-wrong    { border-color: #dc2626; background: #fef2f2; color: #b91c1c; }
+.option-muted    { border-color: #f3f4f6; background: #f9fafb; color: #9ca3af; cursor: not-allowed; }
+
+/* Interviewer avatar speaking animation */
+@keyframes interviewerBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes interviewerGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(79, 70, 229, 0.08); }
+}
+
+@keyframes interviewerBarPulse {
+  0%, 100% { transform: scaleY(0.35); opacity: 0.45; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+.interviewer-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
+  border: 1px solid #c7d2fe;
+}
+
+.interviewer-avatar-speaking {
+  animation: interviewerBob 0.75s ease-in-out infinite, interviewerGlow 1.2s ease-in-out infinite;
+}
+
+.interviewer-voice-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 20px;
+}
+
+.interviewer-voice-bar {
+  width: 4px;
+  height: 100%;
+  border-radius: 999px;
+  background: #94a3b8;
+  transform-origin: bottom;
+}
+
+.interviewer-voice-bar.is-active {
+  background: #4f46e5;
+  animation: interviewerBarPulse 0.85s ease-in-out infinite;
+}
