@@ -39,12 +39,34 @@ const UserSchema = new mongoose.Schema({
         type: String,
         select: false
     },
+    challengeStats: {
+        currentStreak: { type: Number, default: 0, min: 0 },
+        bestStreak: { type: Number, default: 0, min: 0 },
+        challengesCompleted: { type: Number, default: 0, min: 0 },
+        streakBadge: { type: String, default: "None" },
+        lastChallengeDate: { type: Date, default: null },
+        lastChallengeType: { type: String, enum: ["interview", "mcq", "none"], default: "none" }
+    },
+    interviewStats: {
+        totalInterviewScore: { type: Number, default: 0, min: 0 },
+        sessionsCompleted: { type: Number, default: 0, min: 0 },
+        averageInterviewScore: { type: Number, default: 0, min: 0, max: 100 }
+    },
+    leaderboardPoints: {
+        type: Number,
+        default: 0,
+        min: 0
+    },
     resume: {
         url: String,
         publicId: String,
         fileName: String,
         extractedText: String,
-        uploadedAt: Date
+        uploadedAt: Date,
+        analyzed: { type: Boolean, default: false },
+        score: { type: Number, default: 0, min: 0, max: 100 },
+        feedback: String,
+        analyzedAt: Date
     }
 }, { timestamps: true }
 )

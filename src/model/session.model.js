@@ -103,6 +103,22 @@ const roadmapDetailsSchema = new mongoose.Schema(
     { _id: false }
 )
 
+const jobRecommendationSchema = new mongoose.Schema(
+    {
+        title: { type: String, default: "", trim: true },
+        employerName: { type: String, default: "", trim: true },
+        employerLogo: { type: String, default: "", trim: true },
+        location: { type: String, default: "", trim: true },
+        employmentType: { type: String, default: "", trim: true },
+        description: { type: String, default: "", trim: true },
+        applyUrl: { type: String, default: "", trim: true },
+        employmentType: { type: String, default: "", trim: true },
+        salaryRange: { type: String, default: "", trim: true },
+        source: { type: String, default: "jsearch", trim: true }
+    },
+    { _id: false }
+)
+
 const sessionSchema = new mongoose.Schema(
     {
         userId: {
@@ -157,9 +173,13 @@ const sessionSchema = new mongoose.Schema(
         technicalScore: { type: Number, default: 0, min: 0, max: 100 },
         clarityScore: { type: Number, default: 0, min: 0, max: 100 },
         confidenceScore: { type: Number, default: 0, min: 0, max: 100 },
+        mcqScore: { type: Number, default: 0, min: 0, max: 100 },
+        aptitudeScore: { type: Number, default: 0, min: 0, max: 100 },
+        resumeScore: { type: Number, default: 0, min: 0, max: 100 },
         finalFeedback: { type: String, default: "" },
         roadmap: { type: [String], default: [] },
         roadmapDetails: { type: roadmapDetailsSchema, default: null },
+        jobRecommendations: { type: [jobRecommendationSchema], default: [] },
         verdict: {
             verdict: { type: String, enum: ["HIRE", "NO HIRE", "MAYBE"], default: "MAYBE" },
             reason: { type: String, default: "" }

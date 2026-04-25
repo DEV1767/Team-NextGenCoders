@@ -28,6 +28,16 @@ PrepAI provides an end-to-end AI interview preparation workflow:
 4. Roadmap guidance is shown as interactive step cards (box-style UI) with focused learning points and channel links.
 5. Users can track their performance through result dashboards and recommendations.
 
+# After Live Interview End: Job Search Integration
+
+Once the live interview ends, the platform will trigger JSearch API to find at least 5 relevant job listings based on the target position selected in the interview flow.
+
+The fetched jobs will be shown directly on the website so users can:
+
+1. See role-matched opportunities immediately after their interview.
+2. Compare companies, locations, and role details in one place.
+3. Move from interview practice to real job applications without leaving the platform.
+
 
 # USP(Unique selling Points)
 Compared to most interview prep platforms, our product stands out by combining preparation, learning, and job action in one continuous flow:

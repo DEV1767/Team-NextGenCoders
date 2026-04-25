@@ -11,6 +11,9 @@ import interviewRoutes from "./src/routes/interview.routes.js"
 import resultsRoutes from "./src/routes/results.routes.js"
 import mcqRoutes from "./src/routes/mcq.routes.js"
 import landingRoutes from "./src/routes/landing.routes.js"
+import flashcardRoutes from "./src/routes/flashcard.routes.js"
+import challengeRoutes from "./src/routes/challenge.routes.js"
+import leaderboardRoutes from "./src/routes/leaderboard.routes.js"
 
 const app = express()
 
@@ -26,7 +29,7 @@ const corsOptions = {
         "http://localhost:8000"
     ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }
 
@@ -49,4 +52,7 @@ app.use("/api/v1/interview", interviewRoutes)
 app.use("/api/v1/results", resultsRoutes)
 app.use("/api/v1/mcq", mcqRoutes)
 app.use("/api/v1/landing", landingRoutes)
+app.use("/api/v1/flashcards", flashcardRoutes)
+app.use("/api/v1/challenge", challengeRoutes)
+app.use("/api/v1/leaderboard", leaderboardRoutes)
 export default app
